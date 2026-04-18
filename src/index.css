@@ -68,21 +68,31 @@
   --color-light-lavender: hsl(241 100% 89%);
   --color-dark-gray-blue: hsl(224 30% 27%);
 
-  /* ─── Text presets (size + line-height pairs) ─── */
+  /* ─── Text presets (size + line-height) ────────────────────────────
+     Weight is applied separately: font-extrabold (800) / font-bold (700) / font-medium (500)
+     ──────────────────────────────────────────────────────────────────── */
 
-  /* Preset 1 – score number  56px / lh 1    / weight 800 */
-  --text-preset-1: 3.5rem;
+  /* Preset 1 – 72px / lh 100% / ExtraBold */
+  --text-preset-1: 4.5rem;
   --text-preset-1--line-height: 1;
 
-  /* Preset 2 – rating label  32px / lh 1.3  / weight 700 */
-  --text-preset-2: 2rem;
-  --text-preset-2--line-height: 1.3;
+  /* Preset 2 – 56px / lh 100% / ExtraBold */
+  --text-preset-2: 3.5rem;
+  --text-preset-2--line-height: 1;
 
-  /* Preset 3 – section title 24px / lh 1.3  / weight 700 */
-  --text-preset-3: 1.5rem;
+  /* Preset 3 – 32px / lh 130% / Bold */
+  --text-preset-3: 2rem;
   --text-preset-3--line-height: 1.3;
 
-  /* Preset 4 – body / labels 18px / lh 1.6  / weight 500 */
-  --text-preset-4: 1.125rem;
-  --text-preset-4--line-height: 1.6;
+  /* Preset 4 – 24px / lh 130% / Bold */
+  --text-preset-4: 1.5rem;
+  --text-preset-4--line-height: 1.3;
+
+  /* Preset 5 – 18px / lh 130% / Bold or Medium */
+  --text-preset-5: 1.125rem;
+  --text-preset-5--line-height: 1.3;
+
+  /* Preset 6 – 16px / lh 130% / Bold or Medium */
+  --text-preset-6: 1rem;
+  --text-preset-6--line-height: 1.3;
 }
