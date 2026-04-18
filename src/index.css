@@ -48,25 +48,38 @@
   /* Font */
   --font-hanken: 'Hanken Grotesk', sans-serif;
 
-  /* Primary */
-  --color-light-red: hsl(0 100% 67%);
-  --color-orangey-yellow: hsl(39 100% 56%);
-  --color-green-teal: hsl(166 100% 37%);
-  --color-cobalt-blue: hsl(234 85% 45%);
+  /* Base */
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
 
-  /* Gradient – result panel background */
-  --color-gradient-top: hsl(252 100% 67%);
-  --color-gradient-bottom: hsl(241 81% 54%);
+  /* Navy */
+  --color-navy-950: hsl(224, 30%, 27%);
+  --color-navy-200: hsl(241, 100%, 89%);
+  --color-navy-50: hsl(221, 100%, 96%);
 
-  /* Gradient – score circle */
-  --color-circle-top: hsla(256, 72%, 46%, 1);
-  --color-circle-bottom: hsla(241, 72%, 46%, 0);
+  /* Blue */
+  --color-blue-800: hsl(234, 85%, 45%);
+  --color-blue-50: hsl(234, 71%, 97%);
 
-  /* Neutral */
-  --color-white: hsl(0 0% 100%);
-  --color-pale-blue: hsl(221 100% 96%);
-  --color-light-lavender: hsl(241 100% 89%);
-  --color-dark-gray-blue: hsl(224 30% 27%);
+  /* Yellow */
+  --color-yellow-400: hsl(39, 100%, 56%);
+  --color-yellow-50: hsl(38, 100%, 98%);
+
+  /* Red */
+  --color-red-400: hsl(0, 100%, 67%);
+  --color-red-50: hsl(0, 100%, 98%);
+
+  /* Green */
+  --color-green-300: hsl(166, 100%, 37%);
+  --color-green-50: hsl(160, 63%, 97%);
+
+  /* Gradient 1 – score circle */
+  --color-gradient-1-from: hsl(256, 71%, 46%);
+  --color-gradient-1-to: hsl(241, 72%, 46%);
+
+  /* Gradient 2 – result panel background */
+  --color-gradient-2-from: hsl(252, 100%, 67%);
+  --color-gradient-2-to: hsl(241, 81%, 54%);
 
   /* ─── Text presets (size + line-height) ────────────────────────────
      Weight is applied separately: font-extrabold (800) / font-bold (700) / font-medium (500)
