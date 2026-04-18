@@ -5,14 +5,18 @@ export interface Result {
 }
 
 export type ResultLevel =
-  | "bad" // 00-24
-  | "poor" // 25-49
-  | "fair" // 50-74
-  | "great"; // 75-100
+  | "Bad" // 00-24
+  | "Poor" // 25-49
+  | "Fair" // 50-74
+  | "Great"; // 75-100
 
 export interface Feedback {
   min: number;
   max: number;
+  level: ResultLevel;
+  message: string;
+}
+export interface FeedbackResult {
   level: ResultLevel;
   message: string;
 }
