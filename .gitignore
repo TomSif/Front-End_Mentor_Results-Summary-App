@@ -38,3 +38,14 @@ npm-debug.log*
 *.pem
 .DS_Store
 Thumbs.db
+
+#Claude Documentation
+progression.md
+rapport.md
+TotalProgression.md
+AGENTS.md
+CLAUDE.md
+style-guide.md
+README-template.md
+preview.jpg
+.claude
