@@ -21,10 +21,10 @@ const SummaryItem = ({
   onScoreChange,
 }: SummaryItemProps) => {
   return (
-    <div
-      className={`flex justify-between w-full px-4 py-5 ${COLORS[category].bg}`}
+    <dl
+      className={`flex justify-between px-4 py-5 rounded-2xl ${COLORS[category].bg}`}
     >
-      <div
+      <dt
         className={cn(
           `flex gap-4 text-preset-6 font-medium items-center ${COLORS[category].text} `,
         )}
@@ -33,8 +33,8 @@ const SummaryItem = ({
           <img src={icon} />
         </span>
         {category}
-      </div>
-      <div className="text-preset-6 font-bold text-navy-950/50 w-16 flex">
+      </dt>
+      <dd className="text-preset-6 font-bold text-navy-950/50 flex gap-2 items-center">
         <input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = Number(e.target.value);
@@ -46,11 +46,11 @@ const SummaryItem = ({
           max={100}
           value={score}
           type="number"
-          className=" text-navy-950 pr-2"
+          className=" text-navy-950"
         />
-        <span>/100</span>
-      </div>
-    </div>
+        <span>/ 100</span>
+      </dd>
+    </dl>
   );
 };
 

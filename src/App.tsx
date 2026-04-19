@@ -25,7 +25,7 @@ function App() {
   return (
     <main className="min-h-screen grid place-items-center bg-white w-full">
       <form
-        className="w-full  "
+        className="w-full  px-8"
         onSubmit={(e) => {
           e.preventDefault();
           // calcul the Result
@@ -36,21 +36,32 @@ function App() {
           setScoreResult(result);
         }}
       >
-        <ul className="w-full">
-          {data.map((item, index) => (
-            <li key={index} className="w-full">
-              <SummaryItem
-                onScoreChange={(category, value) =>
-                  setScores({ ...scores, [category]: value })
-                }
-                icon={item.icon}
-                category={item.category}
-                score={scores[item.category]}
-              />
-            </li>
-          ))}
-        </ul>
-        <button type="submit">Continue</button>
+        <fieldset className="flex flex-col ">
+          <legend className="text-preset-5 font-bold text-blue-950 mb-6">
+            Summary
+          </legend>
+          <ul className="w-full gap-4 flex flex-col">
+            {data.map((item, index) => (
+              <li key={index} className="w-full">
+                <SummaryItem
+                  onScoreChange={(category, value) =>
+                    setScores({ ...scores, [category]: value })
+                  }
+                  icon={item.icon}
+                  category={item.category}
+                  score={scores[item.category]}
+                />
+              </li>
+            ))}
+          </ul>
+        </fieldset>
+
+        <button
+          className="w-full text-preset-5 font-bold text-white text-center rounded-full bg-navy-950 py-4 mt-6"
+          type="submit"
+        >
+          Continue
+        </button>
       </form>
     </main>
   );
