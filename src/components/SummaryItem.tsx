@@ -8,12 +8,18 @@ export const COLORS: Record<string, { bg: string; text: string }> = {
 };
 
 interface SummaryItemProps {
+  onScoreChange: (category: string, value: number) => void;
   icon: string;
   category: string;
   score: number;
 }
 
-const SummaryItem = ({ icon, category, score }: SummaryItemProps) => {
+const SummaryItem = ({
+  icon,
+  category,
+  score,
+  onScoreChange,
+}: SummaryItemProps) => {
   return (
     <div
       className={`flex justify-between w-full px-4 py-5 ${COLORS[category].bg}`}
@@ -30,11 +36,15 @@ const SummaryItem = ({ icon, category, score }: SummaryItemProps) => {
       </div>
       <div className="text-preset-6 font-bold text-navy-950/50 w-16 flex">
         <input
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const value = Number(e.target.value);
+            return onScoreChange(category, value);
+          }}
           name={category}
           id={category}
           min={0}
           max={100}
-          defaultValue={score}
+          value={score}
           type="number"
           className=" text-navy-950 pr-2"
         />
