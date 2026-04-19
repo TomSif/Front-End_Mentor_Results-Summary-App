@@ -1,16 +1,13 @@
 import { useState } from "react";
-
+import ResultCard from "./components/ResultCard";
 import SummaryItem from "./components/SummaryItem";
 import data from "../src/data/data.json";
 
+//function reduce transform data table in object
+const scoresByCategories = data.reduce<Record<string, number>>((acc, item) => {
+  return { ...acc, [item.category]: item.score };
+}, {});
 function App() {
-  //function reduce transform data table in object
-  const scoresByCategories = data.reduce<Record<string, number>>(
-    (acc, item) => {
-      return { ...acc, [item.category]: item.score };
-    },
-    {},
-  );
   //useState to stock scores by categories
   const [scores, setScores] = useState(scoresByCategories);
   // store the score result
@@ -23,7 +20,8 @@ function App() {
   });
 
   return (
-    <main className="min-h-screen grid place-items-center bg-white w-full">
+    <main className="min-h-screen flex flex-col justify-start bg-white w-full gap-6">
+      <ResultCard score={scoreResult} />
       <form
         className="w-full  px-8"
         onSubmit={(e) => {
