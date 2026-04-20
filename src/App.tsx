@@ -43,7 +43,7 @@ function App() {
               <li key={index} className="w-full">
                 <SummaryItem
                   onScoreChange={(category, value) =>
-                    setScores({ ...scores, [category]: value })
+                    setScores((prev) => ({ ...prev, [category]: value }))
                   }
                   icon={item.icon}
                   category={item.category}

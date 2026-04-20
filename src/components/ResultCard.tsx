@@ -6,7 +6,7 @@ interface ResultCardProps {
 }
 
 const ResultCard = ({ score }: ResultCardProps) => {
-  const [dispayScore, setDisplayScore] = useState<number>(0);
+  const [displayScore, setDisplayScore] = useState<number>(0);
   const [isAnimationOver, setIsAnimationOver] = useState<boolean>(false);
   // Animation Display Score
   useEffect(() => {
@@ -35,7 +35,7 @@ const ResultCard = ({ score }: ResultCardProps) => {
           Your Result
         </h1>
         <div className="flex flex-col font-bold items-center justify-center gap-2 rounded-full w-35 h-35 md:w-50 md:h-50 bg-linear-to-b from-gradient-1-from to-gradient-1-to text-preset-2 md:text-preset-1 text-white">
-          {dispayScore}
+          {displayScore}
           <span className="text-preset-6 font-bold text-navy-200">of 100</span>
         </div>
         <div
