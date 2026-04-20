@@ -39,6 +39,7 @@ const ResultCard = ({ score }: ResultCardProps) => {
           <span className="text-preset-6 font-bold text-navy-200">of 100</span>
         </div>
         <div
+          aria-hidden={!isAnimationOver}
           className={`flex flex-col items-center text-center gap-2 md:gap-4 ${isAnimationOver ? "opacity-100 transition-opacity duration-300" : "opacity-0"}`}
         >
           <h2 className="text-preset-4 md:text-preset-3 font-bold text-white ">
