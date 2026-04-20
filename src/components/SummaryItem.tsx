@@ -30,7 +30,7 @@ const SummaryItem = ({
         )}
       >
         <span className="w-8">
-          <img src={icon} />
+          <img src={icon} alt="" />
         </span>
         {category}
       </dt>
@@ -52,7 +52,7 @@ const SummaryItem = ({
           max={100}
           value={score}
           type="number"
-          className=" text-navy-950"
+          className=" text-navy-950 "
         />
         <span>/ 100</span>
       </dd>
