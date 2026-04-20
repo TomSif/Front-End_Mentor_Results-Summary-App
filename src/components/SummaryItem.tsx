@@ -22,11 +22,11 @@ const SummaryItem = ({
 }: SummaryItemProps) => {
   return (
     <dl
-      className={`flex justify-between px-4 py-5 rounded-2xl ${COLORS[category].bg}`}
+      className={`flex justify-between px-4 py-5 md:py-4.5 rounded-2xl ${COLORS[category].bg}`}
     >
       <dt
         className={cn(
-          `flex gap-4 text-preset-6 font-medium items-center ${COLORS[category].text} `,
+          `flex gap-4 text-preset-6 md:text-preset-5 font-medium items-center ${COLORS[category].text} `,
         )}
       >
         <span className="w-8">
@@ -34,7 +34,7 @@ const SummaryItem = ({
         </span>
         {category}
       </dt>
-      <dd className="text-preset-6 font-bold text-navy-950/50 flex gap-2 items-center">
+      <dd className="text-preset-6 md:text-preset-5 font-bold text-navy-950/50 flex gap-2 items-center">
         <input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = Number(e.target.value);

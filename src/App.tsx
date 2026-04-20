@@ -20,10 +20,10 @@ function App() {
   });
 
   return (
-    <main className="min-h-screen flex flex-col justify-start bg-white w-full gap-6">
+    <main className="flex flex-col justify-start min-h-screen bg-white w-full gap-6 md:max-w-171 xl:max-w-184 md:flex-row md:rounded-4xl md:gap-0 md:min-h-128 shadow-[0_1.875rem_3.75rem_rgba(61,108,236,0.15)]">
       <ResultCard score={scoreResult} />
       <form
-        className="w-full  px-8"
+        className="w-full  px-8 md:px-10 md:flex flex-col md:py-11"
         onSubmit={(e) => {
           e.preventDefault();
           // calcul the Result
@@ -35,7 +35,7 @@ function App() {
         }}
       >
         <fieldset className="flex flex-col ">
-          <legend className="text-preset-5 font-bold text-blue-950 mb-6">
+          <legend className="text-preset-5 md:text-preset-4 font-bold text-blue-950 mb-6 md:mb-8">
             Summary
           </legend>
           <ul className="w-full gap-4 flex flex-col">
@@ -55,10 +55,10 @@ function App() {
         </fieldset>
 
         <button
-          className="w-full text-preset-5 font-bold text-white text-center rounded-full bg-navy-950 py-4 mt-6"
+          className="w-full text-preset-5 font-bold text-white text-center rounded-full bg-navy-950 py-4 mt-6 md:mt-8  "
           type="submit"
         >
-          Continue
+          <span className="z-50">Continue</span>
         </button>
       </form>
     </main>
