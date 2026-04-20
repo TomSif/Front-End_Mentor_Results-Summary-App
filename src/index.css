@@ -117,7 +117,7 @@
 }
 
 /* -------Custom Css-----------------------------*/
-#root {
+.root {
   background: var(--color-blue-50);
   display: flex;
   align-items: center;
@@ -160,6 +160,7 @@ button[type="submit"]::before {
   );
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
+  z-index: 0;
 }
 
 /* hover / focus */
