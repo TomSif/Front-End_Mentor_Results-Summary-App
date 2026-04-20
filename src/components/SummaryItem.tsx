@@ -39,6 +39,9 @@ const SummaryItem = ({
           Enter your score in the {category} category
         </label>
         <input
+          onFocus={(e) => {
+            e.target.select();
+          }}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = Number(e.target.value);
             return onScoreChange(category, value);
