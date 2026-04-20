@@ -1,110 +1,192 @@
-# Frontend Mentor - Results summary component
+# Results Summary Component - Thomas Sifferle 📊
 
-![Design preview for the Results summary component coding challenge](./preview.jpg)
+![forthebadge](https://forthebadge.com/api/badges/generate?primaryLabel=USES&secondaryLabel=HTML)
+![forthebadge](https://forthebadge.com/api/badges/generate?primaryLabel=USES&secondaryLabel=CSS)
+![forthebadge](https://forthebadge.com/api/badges/generate?primaryLabel=USES&secondaryLabel=JS)
+[![forthebadge](https://forthebadge.com/api/badges/generate?primaryLabel=USES&secondaryLabel=GIT)](https://github.com/TomSif)
+[![React](https://img.shields.io/badge/react_19-20232a?style=for-the-badge&logo=react&logocolor=61dafb)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/vite-646cff?style=for-the-badge&logo=vite&logocolor=white)](https://vitejs.dev/)
+[![Tailwind](https://img.shields.io/badge/tailwindcss_v4-0F172A?&logo=tailwindcss&logocolor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-## Welcome! 👋
+![Design preview for the Results Summary Component coding challenge](./public/images/screenshot.png)
 
-Thanks for checking out this front-end coding challenge.
+### 🌐 Live Demo:
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+**[View live site →](https://front-end-mentor-results-summary-guq1w8dcc-tom-sifs-projects.vercel.app/)**
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+Deployed on Vercel with HTTPS and performance optimizations.
 
-## The challenge
+---
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
+This is a solution to the [Results Summary Component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## Table of contents
 
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Your users should be able to:
+## Overview
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- **Bonus**: Use the local JSON data to dynamically populate the content
+### The challenge
 
-### Want some support on the challenge? 
+Users should be able to:
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View their result summary with a score breakdown by category
 
-## Where to find everything
+**Extended version:** The original challenge is a purely static display. I extended it to make it educationally richer — the user can now enter their own score (0–100) for each of the 4 categories, hit "Continue" to trigger the calculation, and see a dynamic score and feedback level update in real time.
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Screenshot
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+![](./public/images/screenshot-mobile.png)
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Links
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Solution URL: [GitHub Repository](https://github.com/TomSif/Front-End_Mentor_Results-Summary-App/tree/main)
+- Live Site URL: [Vercel Deployment](https://front-end-mentor-results-summary-guq1w8dcc-tom-sifs-projects.vercel.app/)
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+## My process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built with
 
-## Using AI coding assistants
+- Semantic HTML5 markup (`dl`, `dt`, `dd` for category lists)
+- CSS custom properties
+- Mobile-first workflow
+- [React 19](https://react.dev/) - JS library
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) - Build tool
+- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS (`@tailwindcss/vite` plugin, `@theme` variables, `@utility` presets)
+- [clsx](https://github.com/lukeed/clsx) + [tailwind-merge](https://github.com/dcastil/tailwind-merge) — `cn()` utility for conditional classNames
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+### What I learned
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+#### Extending the brief — a deliberate architectural decision
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+The original challenge is a static afficheur: data comes in, a fixed score goes out, nothing is interactive. I chose to extend it in a way that stays faithful to the design while unlocking the core React concepts I wanted to practise: controlled inputs, state lifting, and event-driven recalculation.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+The extension is minimal but meaningful: four editable score inputs (one per category), a "Continue" button that acts as a form submit, and a live average displayed in the result panel with a dynamic feedback message based on five levels (`unknown → Bad → Poor → Fair → Great`). The structure of `data.json` remained the source of truth for categories and default values.
 
-## Building your project
+This was a conscious methodological choice — **data-first TypeScript** — where I derived my interfaces from the shape of the actual JSON rather than imagining the architecture upfront. It produced leaner, more accurate types than my previous project's (Pomodoro) type-first approach.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+#### Lifting state and the `onScoreChange` pattern
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+The core interaction required `SummaryItem` (a child) to communicate upward to `App` (the parent) every time a score changed. This is the classic state-lifting pattern, and getting the TypeScript right was the main friction point.
 
-## Deploying your project
+```ts
+// In the interface:
+onScoreChange: (category: string, value: number) => void
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+// In App — updating a single key in the scores object:
+const handleScoreChange = (category: string, value: number) => {
+  setScores(prev => ({ ...prev, [category]: value }))
+}
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+Two TypeScript patterns became much clearer here: the syntax for function types in interfaces (`(param: Type) => ReturnType`), and **computed property names** (`[category]: value`) for dynamic object keys. Both tripped me up more than once before clicking.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+#### `useEffect` + `setInterval` — animation and cleanup
 
-## Create a custom `README.md`
+The score display in the result panel counts up from 0 to the final value when "Continue" is pressed, using a `setInterval` inside a `useEffect`. This seems simple but has several non-obvious constraints:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```ts
+useEffect(() => {
+  setDisplayScore(0); // reset before starting
+  const interval = setInterval(() => {
+    setDisplayScore((prev) => {
+      if (prev >= scoreResult) {
+        clearInterval(interval);
+        return scoreResult;
+      }
+      return prev + 1;
+    });
+  }, 10);
+  return () => clearInterval(interval); // cleanup on unmount or re-trigger
+}, [scoreResult]);
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+Three points I had to work through explicitly:
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+- **Why `prev + 1` and not just `displayScore + 1`** — closures inside `setInterval` capture a stale value of the state. The functional form (`prev => prev + 1`) always reads the latest value.
+- **Where `clearInterval` goes** — both inside the `setState` callback (to stop when target is reached) and in the cleanup return (to cancel if the effect re-runs).
+- **Why reset to `0` first** — without it, a second submit would skip the animation entirely, since the state already equals the new value.
 
-## Submitting your solution
+The fade-in on the feedback text (`isAnimationOver` + `transition-opacity`) followed the same pattern: a boolean state toggled at the end of the counting animation, triggering a CSS opacity transition via Tailwind.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+#### CSS `::before` for button hover states
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+Rather than a second DOM element or a JavaScript toggle, hover and active states on the "Continue" button are handled entirely via a `::before` pseudo-element with an opacity transition. The button is `position: relative`, the overlay is `position: absolute` with `inset-0`, and `opacity` goes from 0 to 1 on `:hover`.
 
-## Sharing your solution
+```css
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(...);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+```
 
-There are multiple places you can share your solution:
+This pattern keeps the hover effect purely in CSS with no React state involved — useful whenever the interaction is purely visual.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+#### Tailwind dynamic classes — a firm rule
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+Early in the project, I tried to build Tailwind classes at runtime with template literals: `text-${color}`. It doesn't work, and the reason is architectural: Tailwind's class scanner runs at build time, so any class not present as a full static string in the source will not be included in the output.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+The fix: a static lookup object mapping category names to their full Tailwind class strings. This is now a firm reflex — if a class needs to vary, a lookup map is the right tool.
 
-## Got feedback for us?
+#### Atomic commits — active practice
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+This project was the first where I applied the **socratic commit protocol** actively: pausing before each commit to choose which files to stage, write a scoped message, and verify that the message describes a single intent. `git add` with explicit filenames (rather than `git add .`) was new practice, as was catching the `&` signal — if a commit message needs `&`, it's two commits.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+Four atomic commits were made across the responsive + accessibility + animation session, each scoped to a single concern: `feat(responsive)`, `feat(css)`, `feat(A11y)`, `fix(config)`.
 
-**Have fun building!** 🚀
+#### Accessibility — `sr-only` labels on inputs
+
+Each score input in `SummaryItem` has a visually hidden label (`sr-only`) that describes its purpose for screen readers. The visible category name (`dt`) and the icon provide context visually, but an unlabelled `<input>` is invisible to assistive technology.
+
+```tsx
+<label htmlFor={id} className="sr-only">{category} score</label>
+<input id={id} type="number" ... />
+```
+
+Also: `onFocus` → `e.target.select()` to auto-select the input content on click, improving UX for a score field the user will typically want to replace entirely.
+
+#### TypeScript config — `"types": ["vite/client"]`
+
+A build error on Vercel exposed a tsconfig subtlety: this project has `noUncheckedSideEffectImports: true`, which is stricter than my previous Pomodoro setup. The standard `vite-env.d.ts` reference wasn't enough — adding `"types": ["vite/client"]` to `tsconfig.app.json` is the clean alternative that makes Vite's ambient types available without a manual reference file.
+
+### Continued development
+
+- **`useEffect` timer logic** — the `setInterval` pattern is understood conceptually but isn't fully automatic yet. Specifically: when to use the functional setState form, where exactly to place `clearInterval`, and how to reason about cleanup. This pattern appears often enough that it needs to become a reflex.
+- **TypeScript function types** — the `(param: Type) => void` syntax in interfaces still requires conscious effort. It needs to become as automatic as `string` or `number`.
+- **Computed property names** — `{ ...obj, [key]: value }` is now understood, but I still hesitate. The mental model (brackets = evaluate this expression as a key) needs more repetition before it's truly anchored.
+- **Static Tailwind lookup maps** — the "no dynamic class names" rule is clear. Next step: making the static map the first instinct, not the fallback after the template literal fails.
+
+## Author
+
+- Frontend Mentor - [@TomSif](https://www.frontendmentor.io/profile/TomSif)
+- GitHub - [@TomSif](https://github.com/TomSif)
+
+## Acknowledgments
+
+This project was built with AI-assisted mentoring (Claude). The approach: I code by hand, Claude acts as a Socratic mentor — asking questions, explaining concepts, reviewing my reasoning. Architectural decisions (what to extend, how to structure state, when to split a component) stayed mine.
+
+Specific AI contributions are documented transparently in my [progression log](./progression.md):
+
+- **Written by Claude:** project scaffold (`chore/setup` commits), TypeScript utility types when syntax was blocked
+- **My initiative:** the decision to extend the challenge with editable inputs, the `data-first` interface derivation approach, building `ResultCard` without assistance, identifying `isAnimationOver` placement
+- **Collaborative:** debugging the `setInterval` + functional setState pattern, working through computed property names, code review and commit scoping
