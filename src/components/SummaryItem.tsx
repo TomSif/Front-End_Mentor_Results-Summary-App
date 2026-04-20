@@ -35,6 +35,9 @@ const SummaryItem = ({
         {category}
       </dt>
       <dd className="text-preset-6 md:text-preset-5 font-bold text-navy-950/50 flex gap-2 items-center">
+        <label className="sr-only" htmlFor={category}>
+          Enter your score in the {category} category
+        </label>
         <input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = Number(e.target.value);
